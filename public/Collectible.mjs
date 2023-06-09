@@ -1,16 +1,17 @@
+import { gameConstants } from "./context.mjs";
 class Collectible {
-  constructor({x, y, value, id}) {
-
+  constructor({ x, y, width = 13, height = 13, value = 1, id = 1 }) {
+    this.x = x;
+    this.y = y;
+    this.width = gameConstants.COIN_WIDTH;
+    this.height = gameConstants.COIN_HEIGHT;
+    this.value = value;
+    this.id = id;
   }
-
 }
 
-/*
-  Note: Attempt to export this for use
-  in server.js
-*/
 try {
   module.exports = Collectible;
-} catch(e) {}
+} catch (e) {}
 
 export default Collectible;
